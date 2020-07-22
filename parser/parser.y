@@ -38,6 +38,7 @@ import (
 
 %}
 
+//在语法解析过程中被压入堆栈的项的属性和类型
 %union {
 	offset int // offset
 	item interface{}
@@ -3810,6 +3811,7 @@ JoinTable:
 		$$ = &ast.Join{Left: $1.(ast.ResultSetNode), Right: $3.(ast.ResultSetNode), Tp: ast.CrossJoin}
 	}
 	/* Your code here. */
+	
 
 JoinType:
 	"LEFT"
